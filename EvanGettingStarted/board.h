@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "piece.h"
 
 using std::vector;
 
@@ -15,10 +16,10 @@ class Board {
 		void display();
 
 		// Return 2d array
-		vector<vector<std::string> > getArray();
+		vector<vector<Piece> > getArray();
 
 	private:
-		vector<vector<std::string> > boardArray;
+		vector<vector<Piece> > boardArray;
 
 };
 
