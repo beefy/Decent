@@ -13,6 +13,7 @@ class Board {
         char turn;
         vector< vector<Piece> > pieces; 
         Board();
+        void display();
     protected:
         void init_pieces();
 };
