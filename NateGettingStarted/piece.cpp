@@ -2,9 +2,9 @@
 #include <string>
 #include "piece.h"
 
-Piece::Piece(char type, char player) {
-    type = type;
-    player = player;
+Piece::Piece(char in_type, char in_player) {
+    type = in_type;
+    player = in_player;
     is_empty = false;
 }
 

@@ -31,7 +31,7 @@ vector<Piece> make_rank(Piece a, Piece b, Piece c, Piece d, Piece e, Piece f, Pi
 
 void Board::init_pieces() {
 
-    Piece none('.','.');
+    Piece none;
     vector<Piece> empty_rank = make_rank(none,none,none,none,none,none,none,none);
     for (int i = 0; i < 8; i++ ) {
          pieces.push_back( empty_rank );
@@ -66,11 +66,12 @@ void Board::init_pieces() {
 void Board::display() {
     for(int i = 0; i < 8; i++) {
         for(int y = 0; y < 8; y++) {
-            cout << "...";
             if(pieces[i][y].is_empty) { 
                 cout << " . ";
             } else {
-                cout << " "+string(1,pieces[i][y].type)+" "; 
+                cout << " ";
+                cout << pieces[i][y].type;
+                cout << " "; 
             } 
         }
         cout << endl; 
