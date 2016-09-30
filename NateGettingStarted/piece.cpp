@@ -2,11 +2,8 @@
 #include <string>
 #include "piece.h"
 
-Piece::Piece(string type, char player, int x_pos, int y_pos) {
+// TODO: make convertion constructor for one string with [0] = type and [1] = player
+Piece::Piece(char type, char player) {
     type = type;
     player = player;
-    x_pos = x_pos;
-    y_pos = y_pos;
 }
-
-

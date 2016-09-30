@@ -11,10 +11,10 @@ using std::vector;
 class Board {
     public:
         char turn;
-        vector< vector<Piece> > pieces;
+        vector< vector<Piece> > pieces; 
         Board();
     protected:
-        vector< vector<Piece> > init_pieces();
+        void init_pieces();
 };
 
 #endif

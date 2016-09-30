@@ -1,18 +1,13 @@
 #ifndef _PIECE_
 #define _PIECE_
 
-
-#include <string>
-
-using std::string;
+using namespace std;
 
 class Piece {
     public:
-        string type;
-        char player;
-        int x_pos;
-        int y_pos;
-        Piece(string type, char player, int x_pos, int y_pos);
+        char type; // R, N, B, K, Q, p 
+        char player; // w, b
+        Piece(char type, char player);
 };
 
 #endif
