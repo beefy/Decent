@@ -70,7 +70,11 @@ void Board::display() {
                 cout << " . ";
             } else {
                 cout << " ";
-                cout << pieces[i][y].type;
+                if(toupper(pieces[i][y].player) == 'W') { 
+                    cout << (char)toupper(pieces[i][y].type);
+                } else {
+                    cout << (char)tolower(pieces[i][y].type);
+                }
                 cout << " "; 
             } 
         }
