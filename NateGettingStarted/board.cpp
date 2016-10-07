@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 #include <string>
 #include <vector>
 #include "board.h"
@@ -8,7 +9,7 @@
 using namespace std;
 
 Board::Board() {
-    turn = 'w';
+    turn = 'B';
     init_pieces();
     cout << "Board Initialized!" << endl;
 }
@@ -80,4 +81,50 @@ void Board::display() {
         }
         cout << endl; 
     } 
+}
+
+// TODO: make this
+bool Board::game_end() {
+    return false;
+}
+
+bool Board::is_valid_move(string move) {
+    if(move == "a") {
+        return true;
+    } 
+
+    return false;
+}
+
+string Board::prompt_move() {
+    string move = "";
+    map<char, string> move_str = {
+        { 'W', "White Player's turn: " },
+        { 'B', "Black Player's turn: " }
+    }; 
+   
+    cout << move_str[turn];
+    cin >> move;  
+    while(not is_valid_move(move)) {
+        cout << "Invalid Move!" << endl;
+        cout << move_str[turn]; 
+        cin >> move;
+    }
+    switch_turns(); 
+    return move;
+}
+
+void Board::switch_turns() {
+    if(turn == 'W') {
+        turn = 'B';
+    } else {
+        turn = 'W';
+    }
+}
+
+void Board::play() {
+    while(not game_end()) {
+        display();
+        string move = prompt_move();
+    }
 }

@@ -14,7 +14,12 @@ class Board {
         vector< vector<Piece> > pieces; 
         Board();
         void display();
+        void play();
+        bool game_end();
+        bool is_valid_move(string move);
+        void switch_turns();
     protected:
+        string prompt_move();
         void init_pieces();
 };
 
