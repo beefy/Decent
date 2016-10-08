@@ -88,8 +88,45 @@ bool Board::game_end() {
     return false;
 }
 
+bool Board::is_valid_notation(string move) {
+    vector<string> pieces;
+    pieces.push_back('a')
+    pieces.push_back('b') 
+    pieces.push_back('c') 
+    pieces.push_back('d') 
+    pieces.push_back('e') 
+    pieces.push_back('f') 
+    pieces.push_back('g') 
+    pieces.push_back('h') 
+    pieces.push_back('R') 
+    pieces.push_back('N') 
+    pieces.push_back('B') 
+    pieces.push_back('Q') 
+    pieces.push_back('K') 
+
+    string piece = move.at(0);
+    if( find(pieces.begin(), pieces.end(), piece) == pieces.end() ) {
+        // invalid piece
+        return false; 
+    } 
+    
+    if( islower(piece) ) {
+        // pawn check
+        
+    } else {
+        // big piece check
+    }
+
+    return true;
+}
+
 // TODO: make this
 bool Board::is_valid_move(string move) {
+    
+    if(not is_valid_notation(move)) {
+        return false;
+    } 
+
     if(move == "a") {
         return true;
     } 

@@ -16,6 +16,7 @@ class Board {
         void display();
         void play();
         bool game_end();
+        bool is_valid_notation(string move);
         bool is_valid_move(string move);
         void switch_turns();
     protected:
