@@ -9,7 +9,7 @@
 using namespace std;
 
 Board::Board() {
-    turn = 'B';
+    turn = 'W';
     init_pieces();
     cout << "Board Initialized!" << endl;
 }
@@ -88,6 +88,7 @@ bool Board::game_end() {
     return false;
 }
 
+// TODO: make this
 bool Board::is_valid_move(string move) {
     if(move == "a") {
         return true;
